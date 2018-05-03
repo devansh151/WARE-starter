@@ -1,0 +1,28 @@
+@import './../../../styles/base/_variables.scss';
+:host {
+    display: inline-block;
+}
+
+
+.timepicker{
+    text-align: center;
+    p-dropdown{
+        .ui-dropdown{
+            .ui-dropdown-label{
+                border: solid 1px $border-grey !important;
+                display: block;
+                .ui-dropdown-trigger{
+                    border: solid 1px $border-grey !important;
+                    border-right: 0px !important;
+                    border-top-right-radius: 0px !important;
+                    border-bottom-right-radius: 0px !important;
+                }
+            }
+        &:last-child{
+            .ui-dropdown-trigger{
+                border-right: solid 1px $border-grey;
+            }
+        }
+        }
+    }
+}

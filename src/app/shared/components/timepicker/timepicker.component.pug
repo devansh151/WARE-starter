@@ -1,0 +1,4 @@
+.timepicker(fxLayoutAlign="center center")
+	p-dropdown('[options]'="hours", '[(ngModel)]'="selectedHours", '(onChange)'="emitDateTime()")
+	p-dropdown('[options]'="minutes", '[(ngModel)]'="selectedMinutes", '(onChange)'="emitDateTime()")
+	p-dropdown('[options]'="meridium", '[(ngModel)]'="selectedMeridium", '(onChange)'="emitDateTime()")
