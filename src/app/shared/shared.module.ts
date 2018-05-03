@@ -5,14 +5,6 @@ import { CommonModule } from '@angular/common';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from "@angular/forms";
-import { OverlayPanelModule } from 'primeng/components/overlaypanel/overlaypanel';
-import { AccordionModule } from 'primeng/components/accordion/accordion';
-import { DropdownModule } from 'primeng/components/dropdown/dropdown';
-import { ListboxModule } from 'primeng/components/listbox/listbox';
-import { MultiSelectModule } from 'primeng/components/multiselect/multiselect';
-import { DialogModule } from 'primeng/components/dialog/dialog';
-import { TooltipModule } from 'primeng/components/tooltip/tooltip';
-import { SliderModule } from 'primeng/components/slider/slider';
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
 import { OlaTabGroupComponent } from './components/ola-tab-group/ola-tab-group.component';
 import { OlaTabItemComponent } from './components/ola-tab-group/ola-tab-item/ola-tab-item.component';
@@ -29,14 +21,7 @@ import { SortableDirective } from './directives/sortable.directive';
 		CommonModule,
 		FlexLayoutModule,
 		FormsModule,
-		ReactiveFormsModule,
-		DropdownModule,
-		MultiSelectModule,
-		DialogModule,
-		TooltipModule,
-		OverlayPanelModule,
-		AccordionModule,
-    	ListboxModule
+		ReactiveFormsModule
 	],
 	exports: [
 		CommonModule,
@@ -52,17 +37,8 @@ import { SortableDirective } from './directives/sortable.directive';
 		InfiniteScrollDirective,
 		RoleMatrixDirective,
 		ChipsComponent,
-		DropdownModule,
-		MultiSelectModule,
-		DialogModule,
-		TooltipModule,
 		SortableDirective,
 		SafeHtmlPipe,
-		TooltipModule,
-		AccordionModule,
-		ListboxModule,
-		OverlayPanelModule,
-    	SliderModule,
 	],
 	declarations: [
 		DatepickerComponent,

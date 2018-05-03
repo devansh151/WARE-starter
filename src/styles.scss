@@ -28,11 +28,6 @@ html {
     width: 100%;
 }
 
-@include placeholder {
-    color: $font-grey;
-    font-weight: 300;
-}
-
 .ola-dragging {
     opacity: 0.3;
     * {

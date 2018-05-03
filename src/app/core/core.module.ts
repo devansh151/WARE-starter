@@ -5,7 +5,6 @@ import { HttpModule, Http } from "@angular/http";
 import { NgReduxModule, NgRedux } from '@angular-redux/store';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
-import { ConfirmationService } from 'primeng/components/common/api';
 
 import { store } from './services/build-redux-store.service';
 import { ApiBridgeService } from './services/api-bridge.service';
@@ -52,7 +51,6 @@ export class CoreModule {
 				UtilsService,
 				RoleMatrixService,
 				DOMEvents,
-				ConfirmationService,
 				ConstantsService
 			]
 		};

@@ -70,8 +70,6 @@ const postcssPlugins = function () {
 };
 
 const entryStyles = [
-  "./node_modules/primeng/resources/themes/omega/theme.css",
-  "./node_modules/primeng/resources/primeng.min.css",
   "./src/styles.scss",
 ];
 
