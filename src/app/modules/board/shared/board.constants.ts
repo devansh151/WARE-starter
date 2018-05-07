@@ -1,3 +1,3 @@
 export const BoardConstants = {
-    SET_MESSAGE:'SET_MESSAGE'
+    SET_ALL_PROJECTS:'SET_ALL_PROJECTS'
 }

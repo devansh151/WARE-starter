@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { BoardMainContainerComponent } from './board-main-container/board-main-container.component';
 import { BoardActions } from './shared/board.actions';
 import { BoardApiService } from './shared/board-api.service';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FlexLayoutModule
   ],
   declarations: [BoardMainContainerComponent],
   providers: [

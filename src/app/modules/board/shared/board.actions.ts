@@ -11,19 +11,19 @@ export class BoardActions {
 
   constructor(private router: Router,private appActions:AppActions,private boardApiService:BoardApiService ) { }
 
-  setMesage: IActionCreator = (data:any) => {
+  setProjects: IActionCreator = (data:any) => {
     return {
-      type: BoardConstants.SET_MESSAGE,
+      type: BoardConstants.SET_ALL_PROJECTS,
       payload: data
     }
   }
 
-  getMessage() {
+  getProjects() {
     return (dispatch) => {
-      this.boardApiService.getMessage()
+      this.boardApiService.getAllProjects()
         .map(res => res.json())
         .subscribe(res => {
-          dispatch(this.setMesage(fromJS(res.message)));
+          dispatch(this.setProjects(fromJS(res)));
         }, err => {
           dispatch(this.appActions.parseAndShowError(err));
         })

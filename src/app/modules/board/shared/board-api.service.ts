@@ -6,8 +6,8 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 @Injectable()
 export class BoardApiService {
 	constructor(private apiBridge: ApiBridgeService) { }
-	getMessage() {
-		let url = `/getMessage`;
+	getAllProjects() {
+		let url = `/getProjects`;
 		return this.apiBridge.makeGet(url);
     }
 }

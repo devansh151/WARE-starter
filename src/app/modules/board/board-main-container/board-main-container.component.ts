@@ -10,14 +10,14 @@ import { Subject } from 'rxjs/Subject';
   styleUrls: ['./board-main-container.component.scss']
 })
 export class BoardMainContainerComponent implements OnInit {
-  @select(['board', 'board','message']) message$: Subject<any>;
+  @select(['board', 'projects']) projects$: Subject<any>;
   constructor(private boardActions:BoardActions,private redux:NgRedux<any>) { }
 
   ngOnInit() {
+  }
 
-
-    this.redux.dispatch(this.boardActions.getMessage());
-    
+  getProjects(){
+    this.redux.dispatch(this.boardActions.getProjects());
   }
 
 }

@@ -1,1 +1,17 @@
-h1 {{ message$|async }}
+header(fxLayout="row",fxLayoutAlign="center center")
+    button((click)="getProjects()") Click me to see JIRA all projects
+table
+    thead
+        th Project ID
+        th Project Key
+        th Project Name
+        th Project Avatar
+        th Project Type
+    tbody
+        tr(*ngFor="let project of (projects$ | async)")
+            td {{ project.get('id') }}
+            td {{ project.get('key') }}
+            td {{ project.get('name') }}
+            td
+                img([src]="project.getIn(['avatarUrls','48x48'])")
+            td {{ project.get('projectTypeKey') }}

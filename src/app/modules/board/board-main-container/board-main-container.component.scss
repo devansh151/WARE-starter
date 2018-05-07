@@ -1,0 +1,33 @@
+body{
+    padding:15px;
+}
+header{
+    height: 100px;
+    button{
+        padding:10px;
+        font-size:12px;
+        height: 40px;
+    }
+}
+table{
+    margin-top:100px;
+    border: 1px solid #00acc1;
+    border-collapse: separate;
+    border-radius: 2px;
+    width:100%;
+    font-size: 12px;
+    td{
+        padding:15px;
+        font-size: 12px;
+        text-align: left;
+        img{
+            width:48px;
+            height:auto;
+        }
+    }
+    th{
+        border-bottom: 1px solid #00acc1;
+        padding:15px;
+        text-align: left;
+    }
+}
