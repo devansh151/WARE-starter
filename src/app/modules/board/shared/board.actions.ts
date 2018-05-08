@@ -18,12 +18,44 @@ export class BoardActions {
     }
   }
 
+  setIssues: IActionCreator = (data:any) => {
+    return {
+      type: BoardConstants.SET_ALL_ISSUES,
+      payload: data
+    }
+  }
+
   getProjects() {
     return (dispatch) => {
       this.boardApiService.getAllProjects()
         .map(res => res.json())
         .subscribe(res => {
           dispatch(this.setProjects(fromJS(res)));
+        }, err => {
+          dispatch(this.appActions.parseAndShowError(err));
+        })
+    }
+  }
+
+  createIssue(){
+    return (dispatch) => {
+      this.boardApiService.createIssue()
+        .map(res => res.json())
+        .subscribe(res => {
+          dispatch(this.appActions.showSuccessToast('JIRA issue created successfully!'));
+          dispatch(this.getIssues());
+        }, err => {
+          dispatch(this.appActions.parseAndShowError(err));
+        })
+    }
+  }
+
+  getIssues() {
+    return (dispatch) => {
+      this.boardApiService.getAllIssues()
+        .map(res => res.json())
+        .subscribe(res => {
+          dispatch(this.setIssues(fromJS(res.issues)));
         }, err => {
           dispatch(this.appActions.parseAndShowError(err));
         })

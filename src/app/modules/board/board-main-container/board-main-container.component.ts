@@ -11,6 +11,7 @@ import { Subject } from 'rxjs/Subject';
 })
 export class BoardMainContainerComponent implements OnInit {
   @select(['board', 'projects']) projects$: Subject<any>;
+  @select(['board', 'issues']) issues$: Subject<any>;
   constructor(private boardActions:BoardActions,private redux:NgRedux<any>) { }
 
   ngOnInit() {
@@ -18,6 +19,11 @@ export class BoardMainContainerComponent implements OnInit {
 
   getProjects(){
     this.redux.dispatch(this.boardActions.getProjects());
+    this.redux.dispatch(this.boardActions.getIssues());
+  }
+
+  createIssue(){
+    this.redux.dispatch(this.boardActions.createIssue());
   }
 
 }

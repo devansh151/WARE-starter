@@ -2,15 +2,20 @@ body{
     padding:15px;
 }
 header{
-    height: 100px;
+    height: 70px;
     button{
         padding:10px;
         font-size:12px;
         height: 40px;
     }
 }
+section.title{
+    background: #00acc1;
+    padding:7px;
+    color: #fff;
+    margin-top:80px;
+}
 table{
-    margin-top:100px;
     border: 1px solid #00acc1;
     border-collapse: separate;
     border-radius: 2px;
@@ -23,6 +28,11 @@ table{
         img{
             width:48px;
             height:auto;
+            display: inline-block;
+            &.icon{
+                width:16px;
+                height:auto;
+            }
         }
     }
     th{

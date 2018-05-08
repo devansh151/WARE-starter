@@ -9,5 +9,15 @@ export class BoardApiService {
 	getAllProjects() {
 		let url = `/getProjects`;
 		return this.apiBridge.makeGet(url);
-    }
+	}
+	
+	createIssue(){
+		let url = `/createIssue`;
+		return this.apiBridge.makePost(url);
+	}
+
+	getAllIssues(){
+		let url = `/getIssues`;
+		return this.apiBridge.makeGet(url);
+	}
 }

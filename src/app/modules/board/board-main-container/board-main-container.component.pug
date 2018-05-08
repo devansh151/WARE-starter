@@ -1,5 +1,9 @@
 header(fxLayout="row",fxLayoutAlign="center center")
-    button((click)="getProjects()") Click me to see JIRA all projects
+    button((click)="getProjects()") Click to see JIRA all projects
+    button((click)="createIssue()") Click to create JIRA Issue
+
+section.title ALL PROJECTS
+
 table
     thead
         th Project ID
@@ -15,3 +19,21 @@ table
             td
                 img([src]="project.getIn(['avatarUrls','48x48'])")
             td {{ project.get('projectTypeKey') }}
+
+
+section.title ALL ISSUES
+
+table
+    thead
+        th Issue ID
+        th Issue Key
+        th Issue Summary
+        th Priority
+    tbody
+        tr(*ngFor="let issue of (issues$ | async)")
+            td {{ issue.get('id') }}
+            td {{ issue.get('key') }}
+            td {{ issue.getIn(['fields','summary']) }}
+            td 
+                img.icon([src]="issue.getIn(['fields','priority','iconUrl'])")
+                | {{ issue.getIn(['fields','priority','name']) }}
