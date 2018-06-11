@@ -4,13 +4,14 @@ import { BoardMainContainerComponent } from './board-main-container/board-main-c
 import { BoardActions } from './shared/board.actions';
 import { BoardApiService } from './shared/board-api.service';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { SvgLineComponent } from './shared/components/svg-line/svg-line.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    FlexLayoutModule
+    FlexLayoutModule 
   ],
-  declarations: [BoardMainContainerComponent],
+  declarations: [BoardMainContainerComponent, SvgLineComponent],
   providers: [
     BoardActions,
     BoardApiService

@@ -34,19 +34,6 @@ router.get('/', (req, response) => {
           response.send("Something went wrong");
       }
   });
-  // jira.findIssue('PE-1')
-  // .then(function(issue) {
-  //   console.log('Status: ' + issue.fields.status.name);
-  //   response.setHeader("Content-Type", 'application/json');
-  //   response.status(200);
-  //   response.send(issue);
-  // })
-  // .catch(function(err) {
-  //   console.log(err);
-  //   response.setHeader("Content-Type", 'application/json');
-  //   response.status(500);
-  //   response.send("Something went wrong");
-  // });
 });
 
 

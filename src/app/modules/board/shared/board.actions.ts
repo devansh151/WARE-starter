@@ -18,12 +18,41 @@ export class BoardActions {
     }
   }
 
+  setFlowchart: IActionCreator = (data:any) => {
+    return {
+      type: BoardConstants.SET_FLOWCHART,
+      payload: data
+    }
+  }
+
+  setLoading: IActionCreator = (data:any) => {
+    return {
+      type: BoardConstants.SET_LOADING,
+      payload: data
+    }
+  }
+
   getProjects() {
     return (dispatch) => {
       this.boardApiService.getAllProjects()
         .map(res => res.json())
         .subscribe(res => {
           dispatch(this.setProjects(fromJS(res)));
+        }, err => {
+          dispatch(this.appActions.parseAndShowError(err));
+        })
+    }
+  }
+
+  getFlowchart(callbackFn?: Function) {
+    return (dispatch) => {
+      dispatch(this.setLoading(true));
+      this.boardApiService.getFlowchart()
+        .map(res => res.json())
+        .subscribe(res => {
+          dispatch(this.setFlowchart(fromJS(res)));
+          dispatch(this.setLoading(false));
+          callbackFn && callbackFn();
         }, err => {
           dispatch(this.appActions.parseAndShowError(err));
         })

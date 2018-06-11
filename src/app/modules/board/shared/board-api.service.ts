@@ -9,5 +9,10 @@ export class BoardApiService {
 	getAllProjects() {
 		let url = `/getProjects`;
 		return this.apiBridge.makeGet(url);
-    }
+	}
+	
+	getFlowchart() {
+		let url = `/getFlowchart`;
+		return this.apiBridge.makeGet(url);
+	}
 }

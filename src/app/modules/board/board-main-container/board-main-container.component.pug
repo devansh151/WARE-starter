@@ -1,17 +1,33 @@
-header(fxLayout="row",fxLayoutAlign="center center")
-    button((click)="getProjects()") Click me to see JIRA all projects
-table
-    thead
-        th Project ID
-        th Project Key
-        th Project Name
-        th Project Avatar
-        th Project Type
-    tbody
-        tr(*ngFor="let project of (projects$ | async)")
-            td {{ project.get('id') }}
-            td {{ project.get('key') }}
-            td {{ project.get('name') }}
-            td
-                img([src]="project.getIn(['avatarUrls','48x48'])")
-            td {{ project.get('projectTypeKey') }}
+.main(fxLayout="column",fxLayoutAlign="space-between stretch")
+    header(fxLayout="row",fxLayoutAlign="start center")
+        .brand(fxLayout="row",fxLayoutAlign="start center")
+            img(src="./assets/images/Ola.png",width="60")
+            h1 Next
+        input.search-bar(type="text", placeholder="Search International",(keyup)="search($event)")
+        .search-icon
+            | &#9906;
+    .components(fxLayout="row",fxLayoutAlign="space-around center")
+        #item-one.item([draggable]="true",(dragstart)="drag($event)") Item One
+        #item-two.item([draggable]="true", (dragstart)="drag($event)") Item two
+        #item-three.item([draggable]="true", (dragstart)="drag($event)") Item Three
+        #item-four.item([draggable]="true", (dragstart)="drag($event)") Item four
+        #item-five.item([draggable]="true", (dragstart)="drag($event)") Item Five
+    .workflow-area#workflow-area((drop)="drop($event)", (dragover)="allowDrop($event)",fxLayout="column",fxLayoutAlign="center center")
+        .placeholder-area(fxLayout="column",fxLayoutAlign="center center", *ngIf="!(isLoading$ | async) && (flowchart$ | async).size <=0")
+            h1 No Flowchart found. Try searching...
+        .loading-area(fxLayout="column",fxLayoutAlign="center center",*ngIf="isLoading$ | async")
+            .scene
+                img.car(src="./assets/images/car.png", alt="", width="50")
+                img.poof(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/43033/poof.svg", alt="",width="15")
+                img.sign(src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/43033/sign.svg", alt="", width="15")
+
+        //- div.svg-area
+        //-     od-svg-line([x1]="x1",[x2]="x2",[y1]="y1",[y2]="y2")
+        //- #drag-area-one.drag-area(fxLayout="row",fxLayoutAlign="space-around center")
+        //- #drag-area-two.drag-area(fxLayout="row",fxLayoutAlign="space-around center")
+        //- #drag-area-three.drag-area(fxLayout="row",fxLayoutAlign="space-around center")
+        //- #drag-area-four.drag-area(fxLayout="row",fxLayoutAlign="space-around center")
+        //- #drag-area-five.drag-area(fxLayout="row",fxLayoutAlign="space-around center")
+        //- #drag-area-six.drag-area(fxLayout="row",fxLayoutAlign="space-around center")
+
+    
